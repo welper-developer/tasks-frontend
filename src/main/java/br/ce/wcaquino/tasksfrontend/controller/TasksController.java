@@ -27,12 +27,14 @@ public class TasksController {
 	private String VERSION;
 	
 	public String getBackendURL() {
+
 		return "http://" + BACKEND_HOST + ":" + BACKEND_PORT;
 	}
 	
 	@GetMapping("")
 	public String index(Model model) {
 		model.addAttribute("todos", getTodos());
+		System.out.println("######## BUSCANO URL");
 		if(VERSION.startsWith("build"))
 			model.addAttribute("version", VERSION);
 		return "index";
