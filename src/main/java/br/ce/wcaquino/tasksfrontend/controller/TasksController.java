@@ -34,7 +34,6 @@ public class TasksController {
 	@GetMapping("")
 	public String index(Model model) {
 		model.addAttribute("todos", getTodos());
-		System.out.println("######## BUSCANO URL");
 		if(VERSION.startsWith("build"))
 			model.addAttribute("version", VERSION);
 		return "index";
